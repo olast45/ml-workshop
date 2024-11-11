@@ -19,3 +19,18 @@ Human experts typically integrate numerical and textual multimodal information t
 ## :floppy_disk: Datasets
 
 ## 📝 Citation
+
+If you find this repo or our work useful for your research, please consider citing the paper:
+
+```tex
+@inproceedings{
+  author    = {Chengsen Wang and Qi Qi and Jingyu Wang and Haifeng Sun and Zirui Zhuang and Jinming Wu and Lei Zhang and Jianxin Liao},
+  title     = {ChatTime: A Unified Multimodal Time Series Foundation Model Bridging Numerical and Textual Data},
+  booktitle = {},
+  year      = {2024},
+}
+```
+
+## 📪 Contact
+
+If you have any question, please contact [cswang@bupt.edu.cn](cswang@bupt.edu.cn).
