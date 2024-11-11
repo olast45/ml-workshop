@@ -49,6 +49,7 @@ plt.plot(pred_x, pred_data, color='#000000', label='true')
 plt.plot(pred_x, out, color='#FF7F0E', label='pred')
 plt.axvline(hist_len, color='red')
 plt.legend(loc="upper left")
+plt.show()
 
 ```
 
@@ -86,6 +87,7 @@ plt.plot(pred_x, out_text, color='#FF7F0E', label='pred_text')
 plt.plot(pred_x, out, color='#1F77B4', label='pred')
 plt.axvline(hist_len, color='red')
 plt.legend(loc="upper left")
+plt.show()
 
 ```
 
@@ -112,6 +114,7 @@ out = model.analyze(question, series)
 
 plt.figure(figsize=(8, 2), dpi=500)
 plt.plot(series, color='#000000')
+plt.show()
 
 print(question)
 print(f"\n{out} / {answer}\n")
