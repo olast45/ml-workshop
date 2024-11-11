@@ -18,9 +18,15 @@ Human experts typically integrate numerical and textual multimodal information t
 
 ## :floppy_disk: Datasets
 
+The datasets used in the ChatTime paper for Continuous Pre-Training and Instruction Fine-Tuning are available in the HuggingFace repositories: [ChengsenWang/ChatTime-1-Pretrain-1M](https://huggingface.co/datasets/ChengsenWang/ChatTime-1-Pretrain-1M) and [ChengsenWang/ChatTime-1-Finetune-100K](https://huggingface.co/datasets/ChengsenWang/ChatTime-1-Finetune-100K).
+
+Unimodal zero-shot forecasting datasets can be accessed via the previous [Google Drive](https://drive.google.com/drive/folders/1S7u4exc5NkKRWfdgqYBZ-VqSz9XfrEDV?usp=sharing), while multimodal datasets for context-guided forecasting and time series question-answering tasks are available on HuggingFace at [ChengsenWang/CGTSF](https://huggingface.co/datasets/ChengsenWang/CGTSF) and [ChengsenWang/TSQA](https://huggingface.co/datasets/ChengsenWang/TSQA).
+
+Refer to these repositories for instructions on downloading and utilizing the datasets.
+
 ## 📝 Citation
 
-If you find this repo or our work useful for your research, please consider citing the paper:
+If you find this repo or our work useful for your research, please consider citing the [paper](https://arxiv.org/abs/0000.00000):
 
 ```tex
 @inproceedings{
