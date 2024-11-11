@@ -121,6 +121,10 @@ print(f"\n{out} / {answer}\n")
 
 ```
 
+### Continuous Pre-Training and Instruction Fine-Tuning
+
+The code for Continuous Pre-Training and Instruction Fine-Tuning for ChatTime is located within the [training](./training/) folder.
+
 ## :floppy_disk: Datasets
 
 Refer to following repositories for instructions on downloading and utilizing the datasets.
