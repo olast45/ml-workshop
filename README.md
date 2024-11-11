@@ -20,11 +20,103 @@ We present three minimal examples showing how to perform the multimodal time ser
 
 ### Zero-Shot Time Series Forecasting
 
+```python
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from model.model import ChatTime
+
+dataset = "Traffic"
+hist_len = 120
+pred_len = 24
+model_path = "ChengsenWang/ChatTime-1-7B-Chat"
+
+df = pd.read_csv(f"./dataset/{dataset}.csv")
+hist_data = np.array(df["Hist"].apply(eval).values.tolist())[:, -hist_len:][0]
+pred_data = np.array(df["Pred"].apply(eval).values.tolist())[:, :pred_len][0]
+
+model = ChatTime(hist_len=hist_len, pred_len=pred_len, model_path=model_path)
+
+out = model.predict(hist_data)
+
+hist_x = np.linspace(0, hist_len-1, hist_len)
+pred_x = np.linspace(hist_len, hist_len+pred_len-1, pred_len)
+
+plt.figure(figsize=(8, 2), dpi=500)
+plt.plot(hist_x, hist_data, color='#000000')
+plt.plot(pred_x, pred_data, color='#000000', label='true')
+plt.plot(pred_x, out, color='#FF7F0E', label='pred')
+plt.axvline(hist_len, color='red')
+plt.legend(loc="upper left")
+
+```
+
 ### Context-Guided Time Series Forecasting
+
+```python
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from model.model import ChatTime
+
+dataset = "PTF"
+hist_len = 120
+pred_len = 24
+model_path = "ChengsenWang/ChatTime-1-7B-Chat"
+
+df = pd.read_csv(f"./dataset/{dataset}.csv")
+hist_data = np.array(df["Hist"].apply(eval).values.tolist())[:, -hist_len:][0]
+pred_data = np.array(df["Pred"].apply(eval).values.tolist())[:, :pred_len][0]
+context = df["Text"].values[0]
+
+model = ChatTime(hist_len=hist_len, pred_len=pred_len, model_path=model_path)
+
+out_text = model.predict(hist_data, context)
+out = model.predict(hist_data)
+
+hist_x = np.linspace(0, hist_len-1, hist_len)
+pred_x = np.linspace(hist_len, hist_len+pred_len-1, pred_len)
+
+plt.figure(figsize=(8, 2), dpi=500)
+plt.plot(hist_x, hist_data, color='#000000')
+plt.plot(pred_x, pred_data, color='#000000', label='true')
+plt.plot(pred_x, out_text, color='#FF7F0E', label='pred_text')
+plt.plot(pred_x, out, color='#1F77B4', label='pred')
+plt.axvline(hist_len, color='red')
+plt.legend(loc="upper left")
+
+```
 
 ### Time Series Question Answering
 
+```python
 
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from model.model import ChatTime
+
+dataset = "TSQA"
+model_path = "ChengsenWang/ChatTime-1-7B-Chat"
+
+df = pd.read_csv(f"./dataset/{dataset}.csv")
+series = np.array(df["Series"].apply(eval).values.tolist())[0]
+question = df["Question"].values[0]
+answer = df["Answer"].values[0]
+
+model = ChatTime(model_path=model_path)
+
+out = model.analyze(question, series)
+
+plt.figure(figsize=(8, 2), dpi=500)
+plt.plot(series, color='#000000')
+
+print(question)
+print(f"\n{out} / {answer}\n")
+
+```
 
 ## :floppy_disk: Datasets
 
