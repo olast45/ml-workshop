@@ -123,7 +123,7 @@ print(f"\n{out} / {answer}\n")
 
 ### Continuous Pre-Training and Instruction Fine-Tuning
 
-The code for Continuous Pre-Training and Instruction Fine-Tuning for ChatTime is located within the [training](./training/) folder.
+The code for Continuous Pre-Training and Instruction Fine-Tuning for ChatTime is located within the [training](./training/) folder, while the model weights are available at [ChengsenWang/ChatTime-1-7B-Base](https://huggingface.co/ChengsenWang/ChatTime-1-7B-Base) and [ChengsenWang/ChatTime-1-7B-Chat](https://huggingface.co/ChengsenWang/ChatTime-1-7B-Chat), respectively.
 
 ## :floppy_disk: Datasets
 
